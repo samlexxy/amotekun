@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us - Company Name{% endblock %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- <h4>Office Information</h4>
+                <p><strong>Address:</strong> 123 Main Street, London, UK</p>
+                <p><strong>Email:</strong> info@company.com</p>
+                <p><strong>Phone:</strong> +44 1234 567890</p> -->
+<!-- 
+                <h2>Contact Information</h2> -->
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <i class="bi bi-geo-alt-fill me-2"></i> 123 Main Street, London, UK
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-telephone-fill me-2"></i> +44 123 456 7890
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-envelope-fill me-2"></i> info@yourcompany.com
+                    </li>
+                    <li class="mb-3">
+                        <i class="bi bi-clock-fill me-2"></i> Monday - Friday: 9:00 AM - 5:00 PM
+                    </li>
+                </ul>                
+
+            </div>
+
+            <div class="col-md-6">
+                <h2>Get in Touch</h2>
+                <!-- <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form> -->
+
+
+                <!-- <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>                 -->
+
+                <!-- <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                
+                {% for field in form.visible_fields %}
+                    {% if not field.is_hidden %}
+                        <div id=control_{{ field.auto_id }} class="wfp-form--group wfp-grid {% if field.errors %}error alert alert-error{% endif %}">
+                            <label id=label_{{ field.auto_id }} class="wfp-u-lg-1-5 wfp-u-sm-1">{{ field.label }}
+                                {% if field.field.required %}<span class="mark_required">*</span>{% endif %}
+                            </label>
+                            <div class="wfp-u-lg-4-5 wfp-u-sm-1">
+                                {{ field }}
+                                {% if field.help_text %}
+                                    <div class="wfp-form--msg">{{ field.help_text }}</div>
+                                {% endif %}
+                                {% if field.errors %}
+                                    <small class="help-inline error">{{ field.errors }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %} -->
+
+                <!-- <form method="POST" class="row g-3"> -->
+                <form method="POST" class="row"></form>
+                    {% csrf_token %}
+
+                    
+                    <div class="col-10">
+                        <label for="{{ form.name.id_for_label }}" class="form-label">
+                            Name
+                            {% if form.name.field.required %}
+                                <span class="text-danger">*</span>
+                            {% endif %}
+                        </label>
+                        {{ form.name }}
+                        {% for error in form.name.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-10">
+                        <label for="{{ form.email.id_for_label }}" class="form-label">
+                            Email
+                            {% if form.name.field.required %}
+                                <span class="text-danger">*</span>
+                            {% endif %}
+                        </label>
+                        {{ form.email }}
+                        {% for error in form.email.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-10">
+                        <label for="{{ form.message.id_for_label }}" class="form-label">
+                            Message
+                            {% if form.name.field.required %}
+                                <span class="text-danger">*</span>
+                            {% endif %}
+                        </label>
+                        {{ form.message }}
+                        {% for error in form.message.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <!-- <div class="col-10">
+                        <label for="{{ form.name.id_for_label }}" class="form-label">Name</label>
+                        {{ form.name }}
+                        {% for error in form.name.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-10">
+                        <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                        {{ form.email }}
+                        {% for error in form.email.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-10">
+                        <label for="{{ form.message.id_for_label }}" class="form-label">Message</label>
+                        {{ form.message }}
+                        {% for error in form.message.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                        {% endfor %}
+                    </div> -->
+                    <!-- <div class="col-10">
+                        {{ form.captcha }}
+                        {% for error in form.captcha.errors %}
+                            <div class="text-danger small">{{ error }}</div>
+                        {% endfor %}
+                    </div> -->
+                
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
