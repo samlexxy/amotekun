@@ -1,27 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Home - Company Name{% endblock %}
+{% block title %}Home - Amotekun{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<!-- <section class="hero"> -->
-<section class="hero" style="background-image: url('{% static "images/security-hero.jpeg" %}');">
-    <div class="container">
+<section class="hero" style="background-image: url('{% static "images/home-hero.png" %}');">
+    <div class="container text-center text-white py-5">
         <h1 class="display-4">Protecting What Matters Most</h1>
         <p class="lead">Providing world-class security solutions tailored to your needs.</p>
         <a href="{% url 'contact' %}" class="btn btn-primary btn-lg mt-3">Contact Us</a>
     </div>
 </section>
-
-<!-- About Section -->
-<!-- <section class="py-5">
-    <div class="container">
-        <h2>About Us</h2>
-        <p>We are leaders in delivering comprehensive security services, trusted by thousands worldwide.</p>
-        <a href="{% url 'about' %}" class="btn btn-outline-dark">Learn More</a>
-    </div>
-</section> -->
 
 <section class="container py-5">
     <div class="row">
@@ -32,8 +21,6 @@
     </div>
 </section>
 
-
-<!-- Services Section -->
 <section class="py-5 bg-light">
     <div class="container">
         <h2 class="col text-center">Our Services</h2>

@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
-{% block title %}Our Services - Company Name{% endblock %}
+{% load static %}
+
+{% block title %}Our Services - Amotekun{% endblock %}
 {% block content %}
+
+<section class="hero" style="background-image: url('{% static "images/services-hero.png" %}');">
+    <div class="container text-center text-white py-5">
+        <h1 class="display-4">Our Services</h1>
+        <p class="lead mt-3">
+            At Amotekun, we offer top-tier security solutions tailored to protect businesses, events, and communities.  
+            Our dedicated team ensures your safety with professional vigilance, modern technology, and strategic expertise.  
+            Trust us to safeguard what matters most.
+        </p>
+    </div>
+</section>
+
 <section class="py-5">
     <div class="container">
-        <h2 class="col text-center">Our Services</h2>
         <div class="row">
-            <!-- <div class="col-md-4">
-                <h4>Corporate Security</h4>
-                <p>Protecting businesses with tailored security strategies and onsite security personnel.</p>
-            </div>
-            <div class="col-md-4">
-                <h4>Event Security</h4>
-                <p>Ensuring safety and security at public, private, and corporate events of all sizes.</p>
-            </div>
-            <div class="col-md-4">
-                <h4>Consultancy Services</h4>
-                <p>Providing expert security consultancy to assess risks and create efficient protection plans.</p>
-            </div> -->
-
             {% for service in services %}
                 <div class="col-md-4">
                     <h4>{{ service.title }}</h4>

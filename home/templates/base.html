@@ -27,17 +27,6 @@
     </style>
 </head>
 <body>
-
-    {% if messages %}
-        <div class="container mt-3">
-        {% for message in messages %}
-            <div class="alert alert-success" role="alert">
-                {{ message }}
-            </div>
-        {% endfor %}
-        </div>
-    {% endif %}
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
@@ -59,13 +48,23 @@
         </div>
     </nav>
 
+    {% if messages %}
+        <div class="container mt-3">
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+
     <!-- Main Content -->
     {% block content %}{% endblock %}
 
     <!-- Footer -->
     <footer class="footer text-center">
         <div class="container">
-            <p>© 2025 Company Name. All Rights Reserved.</p>
+            <p>© 2025 Amotekun. All Rights Reserved.</p>
             <p>Email: info@amotekun.com | Phone: +123 456 7890</p>
         </div>
     </footer>
